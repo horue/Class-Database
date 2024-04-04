@@ -15,10 +15,10 @@ cursor=connection.cursor()
 
 def princiapl_menu():
     option=input("> ")
-    if option.lower() ==("buscar"):
+    if option.lower() == ("buscar"):
         sys.exit
     elif option.lower() == ("adicionar", "adicionar aluno"):
-        add_aluno()
+        aluno()
     elif option.lower() ==  ('ajuda'):
         ajuda()
     elif option.lower() == ("sair"):
@@ -58,10 +58,10 @@ def principal():
     print('# Class Database - Tela Inicial #')
     print('# Bem vindo à Class Database! #')
     print("#" * 35)
-    print('Buscar Aluno')
-    print('Adicionar Aluno')
-    print('Ajuda')
-    print('Sair')
+    print('— Buscar Aluno')
+    print('— Adicionar Aluno')
+    print('— Ajuda')
+    print('— Sair')
     print('Feito por horue.')
     princiapl_menu()
 
