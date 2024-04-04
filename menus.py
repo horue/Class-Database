@@ -4,12 +4,20 @@ import sys
 import os
 
 
+connection=sqlite3.connect("class.db")
+
+cursor=connection.cursor()
+cursor.execute("CREATE TABLE Alunos (Nome TEXT, Curso TEXT, Matrícula INTERGER)")
+
+
+
+
 def princiapl_menu():
     option=input("> ")
     if option.lower() ==("buscar"):
         sys.exit #start_game()
     elif option.lower() == ("Adicionar Aluno"):
-        aajuda()
+        add_aluno()
     elif option.lower() ==  ('ajuda'):
         ajuda()
     elif option.lower() == ("sair"):
@@ -18,6 +26,15 @@ def princiapl_menu():
         print("Por favor, entre um comando válido.")
         option=input("> ")
         return
+
+
+def add_aluno():
+    print("Entre as informações do Aluno a ser adicionado:")
+    nome=input("Nome do aluno: ")
+    curso=input("Curso do aluno: ")
+    mat=input("Matrícula do aluno: ")
+    cursor.execute(f"INSERT INTO Alunos VALUES ({nome, curso, mat})")
+
 
 def ajuda_menu():
     option=input("> ")
