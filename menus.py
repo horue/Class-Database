@@ -1,4 +1,4 @@
-import webbrowser as ww
+import webbrowser as wb
 import sqlite3
 import sys
 import os
@@ -22,7 +22,7 @@ def princiapl_menu():
 def ajuda_menu():
     option=input("> ")
     if option.lower() ==  ('mais'):
-        ww.open('https://github.com/horue')
+        wb.open('https://github.com/horue')
     while option.lower() not in ['mais']:
         print('Por favor, entre um comando válido. ')
         option=input("> ")
