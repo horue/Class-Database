@@ -7,7 +7,7 @@ import os
 connection=sqlite3.connect("class.db")
 
 cursor=connection.cursor()
-cursor.execute("CREATE TABLE Alunos (Nome TEXT, Curso TEXT, Matrícula INTERGER)")
+#cursor.execute("CREATE TABLE Alunos (Nome TEXT, Curso TEXT, Matrícula INTERGER)")
 
 
 
@@ -53,6 +53,7 @@ def ajuda_menu():
 
     
 def principal():
+    os.system('cls')
     print("#" * 30)
     print('# Bem vindo à Class Database! #')
     print("#" * 30)
@@ -65,6 +66,7 @@ def principal():
 
 
 def ajuda():
+    os.system('cls')
     print("#" * 30)
     print('# Class Database - Tela de Ajuda #')
     print("#" * 30)
