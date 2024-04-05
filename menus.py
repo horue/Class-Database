@@ -16,8 +16,8 @@ cursor=connection.cursor()
 
 def principal_menu():
     option=input("> ")
-    if option.lower() == ("buscar"):
-        buscar()
+    if option.lower() == ("buscar") or option.lower() == ('busca'):
+        busca()
     elif option.lower() == ('adicionar aluno') or option.lower() == ('adicionar'):
         aluno()
     elif option.lower() ==  ('ajuda'):
@@ -26,9 +26,18 @@ def principal_menu():
         sys.exit
     elif option.lower() == ("admin"):
         login()
-    while option.lower() not in ['buscar', 'adicionar aluno', 'adicionar', 'ajuda', 'sair', 'admin']:
+    while option.lower() not in ['buscar', 'busca', 'adicionar aluno', 'adicionar', 'ajuda', 'sair', 'admin']:
         print("Por favor, entre um comando válido.")
         option=input("> ")
+
+
+
+
+
+def busca_menu():
+    option=input("> ")
+
+
 
 
 def add_aluno():
@@ -80,19 +89,31 @@ def adm_scr():
 
 
 
-    
+
+
 def principal():
     os.system('cls')
     print("#" * 35)
     print('# Class Database - Tela Inicial #')
     print('# Bem vindo à Class Database! #')
     print("#" * 35)
-    print('— Buscar Aluno')
+    print('— Buscar na Base de Dados')
     print('— Adicionar Aluno')
     print('— Ajuda')
     print('— Sair')
     print('Feito por horue.')
     principal_menu()
+
+
+
+def busca():
+    os.system('cls')
+    print("#" * 35)
+    print('# Class Database - Tela de Busca #')
+    print('# Aonde você gostaria de buscar? #')
+    print("#" * 35)
+
+
 
 
 def aluno():
@@ -135,3 +156,4 @@ def adm():
     print('# Área do Administrador #')
     print("#" * 35)
     adm_scr()
+    
