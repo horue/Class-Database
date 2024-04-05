@@ -1,0 +1,2 @@
+Finish the search function
+Add another table to the courses
