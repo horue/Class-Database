@@ -1,4 +1,4 @@
 Finish the search function
 Add another table to the courses
-Add an admin option where you can run any code
+(WIP) - Add an admin option where you can run any code
 Remake the main screen art
