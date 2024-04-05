@@ -34,9 +34,13 @@ def add_aluno():
     mat=input("Matrícula do aluno: ")
     cursor.execute(f"INSERT INTO Alunos VALUES ('{nome}', '{curso}', {mat})")
     print('Aluno adicinado com sucesso!')
-    r=input('Deseja voltar para a tela incial? (S/N) ')
+    r=input('Deseja registrar outro aluno? (S/N) ')
     if r == "S" or r == "s":
-        principal()
+        aluno()
+    elif r == 'N' or r == 'n':
+        r2=input('Deseja voltar à tela iniicla? (S/N) ')
+        if r2 == 'S' or r2 == "s":
+            principal()
     return
 
 
