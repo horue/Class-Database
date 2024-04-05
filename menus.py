@@ -2,6 +2,7 @@ import webbrowser as wb
 import sqlite3
 import sys
 import os
+from psw import senha
 
 
 connection=sqlite3.connect("class.db")
@@ -17,13 +18,15 @@ def principal_menu():
     option=input("> ")
     if option.lower() == ("buscar"):
         buscar()
-    elif option.lower() == ('adicionar aluno'):
+    elif option.lower() == ('adicionar aluno') or option.lower() == ('adicionar'):
         aluno()
     elif option.lower() ==  ('ajuda'):
         ajuda()
     elif option.lower() == ("sair"):
         sys.exit
-    while option.lower() not in ['buscar', 'adicionar aluno', 'ajuda', 'sair']:
+    elif option.lower() == ("admin"):
+        login()
+    while option.lower() not in ['buscar', 'adicionar aluno', 'adicionar', 'ajuda', 'sair', 'admin']:
         print("Por favor, entre um comando válido.")
         option=input("> ")
 
@@ -55,6 +58,16 @@ def ajuda_menu():
         print('Por favor, entre um comando válido. ')
         option=input("> ")
         return
+
+def adm():
+    print('Entre a senha de administrador')
+    psw=input('> ')
+    if psw == senha:
+        adm_scr()
+    else:
+        print('Senha incorreta. Aperte enter para voltar à tela inicial')
+        input('> ')
+        principal()
 
 
     
@@ -95,3 +108,13 @@ def ajuda():
     print('Made by horue.')
     ajuda_menu()
     return(principal)
+
+
+
+
+def login():
+    os.system('cls')
+    print("#" * 35)
+    print('# Class Database - Tela de Administrador #')
+    print("#" * 35)
+    adm()
