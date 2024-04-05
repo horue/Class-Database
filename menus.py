@@ -59,15 +59,25 @@ def ajuda_menu():
         option=input("> ")
         return
 
-def adm():
-    print('Entre a senha de administrador')
+def adm_menu():
+    print('Entre a senha de administrador abaixo: ')
     psw=input('> ')
     if psw == senha:
-        adm_scr()
+        adm()
     else:
-        print('Senha incorreta. Aperte enter para voltar à tela inicial')
+        os.system('cls')
+        print('Senha incorreta. Aperte enter para voltar à tela inicial.')
         input('> ')
         principal()
+
+
+
+def adm_scr():
+    print('Entre o comando desejado')
+    c=input('> ')
+    cursor.execute(c)
+    adm()
+
 
 
     
@@ -117,4 +127,11 @@ def login():
     print("#" * 35)
     print('# Class Database - Tela de Administrador #')
     print("#" * 35)
-    adm()
+    adm_menu()
+
+def adm():
+    os.system('cls')
+    print("#" * 35)
+    print('# Área do Administrador #')
+    print("#" * 35)
+    adm_scr()
