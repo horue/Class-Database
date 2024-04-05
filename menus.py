@@ -13,29 +13,31 @@ cursor=connection.cursor()
 
 
 
-def princiapl_menu():
+def principal_menu():
     option=input("> ")
     if option.lower() == ("buscar"):
-        sys.exit
-    elif option.lower() == ("adicionar", "adicionar aluno"):
+        buscar()
+    elif option.lower() == ('adicionar aluno'):
         aluno()
     elif option.lower() ==  ('ajuda'):
         ajuda()
     elif option.lower() == ("sair"):
         sys.exit
-    while option.lower() not in ['buscar', 'adicionar', 'adicionar aluno', 'ajuda', 'sair']:
+    while option.lower() not in ['buscar', 'adicionar aluno', 'ajuda', 'sair']:
         print("Por favor, entre um comando válido.")
         option=input("> ")
-        return
 
 
 def add_aluno():
-    while True:
-        nome=input("Nome do aluno: ")
-        curso=input("Curso do aluno: ")
-        mat=input("Matrícula do aluno: ")
-        cursor.execute(f"INSERT INTO Alunos VALUES ({nome, curso, mat})")
-        return
+    nome=input("Nome do aluno: ")
+    curso=input("Curso do aluno: ")
+    mat=input("Matrícula do aluno: ")
+    cursor.execute(f"INSERT INTO Alunos VALUES ('{nome}', '{curso}', {mat})")
+    print('Aluno adicinado com sucesso!')
+    r=input('Deseja voltar para a tela incial? (S/N) ')
+    if r == "S" or r == "s":
+        principal()
+    return
 
 
 def ajuda_menu():
@@ -63,10 +65,11 @@ def principal():
     print('— Ajuda')
     print('— Sair')
     print('Feito por horue.')
-    princiapl_menu()
+    principal_menu()
 
 
 def aluno():
+    os.system('cls')
     print("#" * 35)
     print('# Class Database - Adicionando Aluno #')
     print("#" * 35)
