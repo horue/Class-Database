@@ -50,7 +50,8 @@ def busca_mat_menu():
     print('Insira a matrícula que será buscada')
     mat=input("> ")
     busca=cursor.execute(f'SELECT * FROM Alunos WHERE Matrícula = {mat}')
-    print(busca)
+    final_busca=busca.fetchone()
+    print(final_busca)
     r=input('Deseja buscar outro aluno por matrícula? (S/N) ')
     if r == "S" or r == "s":
         busca_mat()
