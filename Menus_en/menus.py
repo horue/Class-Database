@@ -16,17 +16,17 @@ cursor=connection.cursor()
 
 def principal_menu():
     option=input("> ")
-    if option.lower() == ("buscar") or option.lower() == ('busca'):
+    if option.lower() == ("search") or option.lower() == ('busca'):
         buscar()
-    elif option.lower() == ('adicionar aluno') or option.lower() == ('adicionar'):
+    elif option.lower() == ('aadd student') or option.lower() == ('add'):
         aluno()
-    elif option.lower() ==  ('ajuda'):
+    elif option.lower() ==  ('help'):
         ajuda()
-    elif option.lower() == ("sair"):
+    elif option.lower() == ("exit"):
         sys.exit
     elif option.lower() == ("admin"):
         login()
-    while option.lower() not in ['buscar', 'busca', 'adicionar aluno', 'adicionar', 'ajuda', 'sair', 'admin']:
+    while option.lower() not in ['search', 'busca', 'add student', 'add', 'help', 'exit', 'admin']:
         print("Por favor, entre um comando válido.")
         option=input("> ")
 
@@ -84,14 +84,14 @@ def adm_scr():
 def principal():
     os.system('cls')
     print("#" * 35)
-    print('# Class Database - Tela Inicial #')
-    print('# Bem vindo à Class Database! #')
+    print('# Class Database - Main Screen #')
+    print('# Welcome to Class Database! #')
     print("#" * 35)
-    print('— Buscar na Base de Dados')
-    print('— Adicionar Aluno')
-    print('— Ajuda')
-    print('— Sair')
-    print('Feito por horue.')
+    print('— Search on Database')
+    print('— Add Student')
+    print('— Help')
+    print('— Exit')
+    print('Made by horue.')
     principal_menu()
 
 
