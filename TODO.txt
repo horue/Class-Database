@@ -1,6 +1,6 @@
 Finish the search function
 Add another table to the courses
-(ALMOST FINISHED) - Add an admin option where you can run any code
+(DONE) - Add an admin option where you can run any code
 Remake the main screen art
-Add options to see the tables
-Add option on how to see the tables
+(ALMOST FINISHED)Add options to see the tables
+(DONE) Add option on how to see the tables
