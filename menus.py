@@ -47,7 +47,7 @@ def busca_menu():
 def busca_mat_menu():
     print('Insira a matrícula que será buscada')
     mat=input("> ")
-    busca=cursor.execute(f'SELECT * FROM Alunos WHERE nome = {mat}')
+    busca=cursor.execute(f'SELECT * FROM Alunos WHERE Matrícula = {mat}')
     print(busca)
     r=input('Deseja buscar outro aluno por matrícula? (S/N) ')
     if r == "S" or r == "s":
@@ -57,6 +57,23 @@ def busca_mat_menu():
         if r2 == 'S' or r2 == "s":
             principal()
     return
+
+def busca_nome_menu():
+    print('Insira o nome que será buscado')
+    nome=str(input("> "))
+    busca=cursor.execute(f'SELECT * FROM Alunos WHERE Nome = {nome}')
+    print(busca)
+    r=input('Deseja buscar outro aluno por nome? (S/N) ')
+    if r == "S" or r == "s":
+        busca_mat()
+    elif r == 'N' or r == 'n':
+        r2=input('Deseja voltar à tela iniicla? (S/N) ')
+        if r2 == 'S' or r2 == "s":
+            principal()
+    return
+
+
+
 
 
 
@@ -146,6 +163,14 @@ def busca_mat():
     print("#" * 35)
     busca_mat_menu()
 
+def busca_nome():
+    os.system('cls')
+    print("#" * 35)
+    print('# Class Database - Tela de Busca #')
+    print('# Busca por Nome #')
+    print("#" * 35)
+    busca_nome_menu()
+
 
 
 
@@ -169,7 +194,6 @@ def ajuda():
     print('— Use comandos para acessar, alterar ou apagar dados no banco de dados.')
     print("— Caso ainda tenha alguma dúvida, use o comando 'Mais' para ser redirecionado à docmuentação do programa.")
     print("— Para voltar à tela anterior, use o comando 'Voltar'.")
-    print("— Para ajuda com IA use o comando 'IA'. (Experimental)")
     print('Made by horue.')
     ajuda_menu()
     return(principal)
