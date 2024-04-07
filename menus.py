@@ -13,6 +13,8 @@ cursor=connection.cursor()
 
 
 
+## Menus Functions ##
+
 
 def principal_menu():
     option=input("> ")
@@ -127,7 +129,7 @@ def adm_scr():
     adm()
 
 
-
+## General Menus ##
 
 
 def principal():
@@ -142,8 +144,6 @@ def principal():
     print('— Sair')
     print('Feito por horue.')
     principal_menu()
-
-
 
 def busca():
     os.system('cls')
@@ -171,9 +171,6 @@ def busca_nome():
     print("#" * 35)
     busca_nome_menu()
 
-
-
-
 def aluno():
     os.system('cls')
     print("#" * 35)
@@ -182,9 +179,6 @@ def aluno():
     print("Entre as informações do Aluno a ser adicionado:")
     add_aluno()
     return(principal)
-
-
-
 
 def ajuda():
     os.system('cls')
@@ -200,6 +194,7 @@ def ajuda():
 
 
 
+## Admin Screen ##
 
 def login():
     os.system('cls')
