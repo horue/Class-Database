@@ -49,12 +49,12 @@ def add_aluno():
 
 def ajuda_menu():
     option=input("> ")
-    if option.lower() ==  ('mais'):
+    if option.lower() ==  ('more'):
         wb.open('https://github.com/horue')
         principal()
-    if option.lower() == ('voltar'):
+    if option.lower() == ('back'):
         principal()
-    while option.lower() not in ['mais', 'voltar']:
+    while option.lower() not in ['more', 'back']:
         print('Por favor, entre um comando válido. ')
         option=input("> ")
         return
@@ -121,11 +121,11 @@ def aluno():
 def ajuda():
     os.system('cls')
     print("#" * 35)
-    print('# Class Database - Tela de Ajuda #')
+    print('# Class Database - Help Screen #')
     print("#" * 35)
-    print('— Use comandos para acessar, alterar ou apagar dados no banco de dados.')
-    print("— Caso ainda tenha alguma dúvida, use o comando 'Mais' para ser redirecionado à docmuentação do programa.")
-    print("— Para voltar à tela anterior, use o comando 'Voltar'.")
+    print('— Use commands to access, change or erase data.')
+    print("— In case you need more help, use 'More' to see the documentation.")
+    print("— To go back to main screen, use 'back'.")
     print('Made by horue.')
     ajuda_menu()
     return(principal)
