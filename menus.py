@@ -72,7 +72,7 @@ def busca_nome_menu():
     if r == "S" or r == "s":
         busca_mat()
     elif r == 'N' or r == 'n':
-        r2=input('Deseja voltar à tela iniicla? (S/N) ')
+        r2=input('Deseja voltar à tela inicial? (S/N) ')
         if r2 == 'S' or r2 == "s":
             principal()
     return
