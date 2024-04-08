@@ -42,7 +42,9 @@ def busca_menu():
         busca_mat()
     elif option.lower () == ("nome"):
         busca_nome()
-    while option.lower() not in ['matrícula', 'nome']:
+    elif option.lower() == ("curso"):
+        busca_curso()
+    while option.lower() not in ['matrícula', 'nome', 'curso']:
         print('Por favor, entre um comando válido.')
         option=input("> ")
 
@@ -75,6 +77,22 @@ def busca_nome_menu():
             principal()
     return
 
+def busca_curso_menu():
+    print('Qual curso você deseja ver os alunos?')
+    curso=input("> ")
+    busca=cursor.execute(f'SELECT * FROM Alunos WHERE Curso = {curso}')
+    final_busca=busca.fetchone()
+    print(final_busca)
+    r=input('Deseja buscar outro curso? (S/N) ')
+    if r == "S" or r == "s":
+        busca_mat()
+    elif r == 'N' or r == 'n':
+        r2=input('Deseja voltar à tela iniicla? (S/N) ')
+        if r2 == 'S' or r2 == "s":
+            principal()
+    return
+
+
 
 
 
@@ -87,6 +105,7 @@ def add_aluno():
     curso=input("Curso do aluno: ")
     mat=input("Matrícula do aluno: ")
     cursor.execute(f"INSERT INTO Alunos VALUES ('{nome}', '{curso}', {mat})")
+    connection.commit()
     print('Aluno adicinado com sucesso!')
     r=input('Deseja registrar outro aluno? (S/N) ')
     if r == "S" or r == "s":
@@ -154,13 +173,14 @@ def busca():
     print("#" * 35)
     print("Busca por matrícula")
     print("Busca por nome")
+    print("Busca por curso")
     busca_menu()
 
 def busca_mat():
     os.system('cls')
     print("#" * 35)
     print('# Class Database - Tela de Busca #')
-    print('# Busca por matrícula #')
+    print('# Busca por Matrícula #')
     print("#" * 35)
     busca_mat_menu()
 
@@ -171,6 +191,15 @@ def busca_nome():
     print('# Busca por Nome #')
     print("#" * 35)
     busca_nome_menu()
+
+def busca_curso():
+    os.system('cls')
+    print("#" * 35)
+    print('# Class Database - Tela de Busca #')
+    print('# Busca por Curso #')
+    print("#" * 35)
+    busca_curso_menu()
+
 
 def aluno():
     os.system('cls')
