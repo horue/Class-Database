@@ -72,7 +72,7 @@ def busca_nome_menu():
     print(busca)
     r=input('Deseja buscar outro aluno por nome? (S/N) ')
     if r == "S" or r == "s":
-        busca_mat()
+        busca_nome()
     elif r == 'N' or r == 'n':
         r2=input('Deseja voltar à tela inicial? (S/N) ')
         if r2 == 'S' or r2 == "s":
@@ -87,7 +87,7 @@ def busca_curso_menu():
     print(final_busca)
     r=input('Deseja buscar outro curso? (S/N) ')
     if r == "S" or r == "s":
-        busca_mat()
+        busca_curso()
     elif r == 'N' or r == 'n':
         r2=input('Deseja voltar à tela inicial? (S/N) ')
         if r2 == 'S' or r2 == "s":
