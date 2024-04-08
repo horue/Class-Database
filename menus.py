@@ -12,6 +12,8 @@ cursor=connection.cursor()
 #cursor.execute("CREATE TABLE Alunos (Nome TEXT, Curso TEXT, Matrícula INTERGER)")
 
 
+v = ('0.1.1')
+
 
 ## Menus Functions ##
 
@@ -155,8 +157,8 @@ def adm_scr():
 def principal():
     os.system('cls')
     print("#" * 35)
-    print('# Class Database - Tela Inicial #')
-    print('# Bem vindo à Class Database! #')
+    print(f'# Class Database - Tela Inicial #')
+    print('# Bem vindo à Class Database!#')
     print("#" * 35)
     print('— Buscar na Base de Dados')
     print('— Adicionar Aluno')
