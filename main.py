@@ -2,5 +2,5 @@ from menus import principal
 
 
 
-
-principal()
+while True:
+    principal()
