@@ -156,10 +156,10 @@ def adm_scr():
 
 def principal():
     os.system('cls')
-    print("#" * 35)
-    print(f'# Class Database - Tela Inicial #')
-    print('# Bem vindo à Class Database!#')
-    print("#" * 35)
+    print("#"*len('# Class Database - Tela Inicial #'))
+    print('# Class Database - Tela Inicial #')
+    print('# Bem vindo à Class Database!   #')
+    print("#"*len('# Class Database - Tela Inicial #'))
     print('— Buscar na Base de Dados')
     print('— Adicionar Aluno')
     print('— Ajuda')
