@@ -149,6 +149,7 @@ def adm_scr():
     print('Entre o comando desejado')
     c=input('> ')
     cursor.execute(c)
+    connection.commit()
     adm()
 
 
