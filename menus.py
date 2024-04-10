@@ -69,7 +69,8 @@ def busca_nome_menu():
     print('Insira o nome que será buscado')
     nome=str(input("> "))
     busca=cursor.execute(f'SELECT * FROM Alunos WHERE Nome = "{nome}"')
-    print(busca)
+    final_busca=busca.fetchone()
+    print(final_busca)
     r=input('Deseja buscar outro aluno por nome? (S/N) ')
     if r == "S" or r == "s":
         busca_nome()
