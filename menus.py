@@ -9,7 +9,7 @@ connection=sqlite3.connect("class.db")
 
 cursor=connection.cursor()
 
-#cursor.execute("CREATE TABLE Alunos (Nome TEXT, Curso TEXT, Matrícula INTERGER)")
+cursor.execute("CREATE TABLE IF NOT EXISTS Alunos (Nome TEXT, Curso TEXT, Matrícula INTERGER)")
 
 
 v = ('0.1.1')
