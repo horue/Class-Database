@@ -85,7 +85,8 @@ def busca_curso_menu():
     curso=input("> ")
     busca=cursor.execute(f'SELECT * FROM Alunos WHERE Curso = "{curso}"')
     final_busca=busca.fetchone()
-    print(final_busca)
+    for aluno in final_busca:
+        print(aluno)
     r=input('Deseja buscar outro curso? (S/N) ')
     if r == "S" or r == "s":
         busca_curso()
